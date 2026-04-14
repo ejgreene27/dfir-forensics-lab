@@ -1,0 +1,31 @@
+CASE: M57-Jean - Corporate Data Exfiltration
+Investigator: Evan Greene
+Date Started: 2026-04-13
+
+=== EVIDENCE INTEGRITY VERIFICATION ===
+Tool: ewfverify
+Image: nps-2008-jean.E01 / nps-2008-jean.E02
+Total Size: ~2.8 GB (10 GiB logical)
+
+Read: 10 GiB in 2 min 24 sec at 71 MiB/s
+MD5 stored in file:      78a52b5bac78f4e711607707ac0e3f93
+MD5 calculated over data: 78a52b5bac78f4e711607707ac0e3f93
+Result: VERIFIED - hashes match, image integrity confirmed
+
+## Autopsy 4.21.0 Installation Notes - 2026-04-13
+- Installed from zip, required unix_setup.sh configuration
+- JAVA_HOME must be set to Java 17 (/usr/lib/jvm/java-17-openjdk-amd64)
+- sleuthkit jar copied to /usr/share/java/ to pass setup script check
+- Removed --add-opens flags from autopsy.conf for Java 8, restored for Java 17
+- Fatal error: libtsk_jni failed to load - SleuthkitJNI incompatibility
+- Resolution: downgrade to Autopsy 4.19.3 which has better SIFT/Linux compatibility
+
+## Autopsy Troubleshooting & CLI Pivot - 2026-04-13
+- Autopsy 4.21.0 bundled sleuthkit-4.12.1.jar contained only Windows DLLs, no Linux .so
+- Built TSK 4.12.1 from source, compiled libtsk_jni.so manually with correct rpath (/usr/local/lib)
+- Injected libtsk_jni.so into NATIVELIBS/amd64/linux/ inside the jar
+- JVM SIGSEGV persisted (String.getBytesNoRepl1 crash) - likely deep Java 17 / custom .so incompatibility
+- Decision: pivot to CLI-based analysis using Sleuth Kit tools (mmls, fls, icat, tsk_recover)
+- CLI tools confirmed working: mmls successfully parsed nps-2008-jean.E01
+- Partition layout: DOS partition table, single NTFS partition at sector offset 63 (sectors 63-20948759)
+- Next step: fls -o 63 -r -p ~/nps-2008-jean.E01 to enumerate filesystem and begin analysis
