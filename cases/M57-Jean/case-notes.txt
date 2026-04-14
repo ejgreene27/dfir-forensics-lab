@@ -29,3 +29,43 @@ Result: VERIFIED - hashes match, image integrity confirmed
 - CLI tools confirmed working: mmls successfully parsed nps-2008-jean.E01
 - Partition layout: DOS partition table, single NTFS partition at sector offset 63 (sectors 63-20948759)
 - Next step: fls -o 63 -r -p ~/nps-2008-jean.E01 to enumerate filesystem and begin analysis
+
+4/14/2026
+- m57biz.xls found on Jean's Desktop (inode 32712)
+- File metadata from file command
+- Author vs Last Saved By discrepancy
+- File contents: HR/payroll data with SSNs and salaries
+- Timestamp anomaly: saved at 1:28 AM on a Sunday
+
+- IPH.PH (AOL Instant Messager installer log file) analyzed
+- AIM version 6.8.10.1 was installed on this machine
+- Installation timestamp: 2008/07/18 at 04:26 AM — installed in the middle of the night, same general timeframe as the m57biz.xls save timestamp (July 20 at 1:28 AM)
+- OS confirmed: Windows XP Service Pack 3
+- RAM: 512MB — consistent with a 2008 era machine
+- Cogsworth01/02 sections show AIM components were downloaded and installed successfully (ed=1 means install completed)
+- Machine ID: AA61E407-122B-4458-B125-BDB2166556FA
+
+- Timeline building up
+- Jean had AIM installed - AIM Tunes.url seen on Jean's desktop.
+- AIM possible exfiltration vector for m57biz.xls
+- July 18, 4:26 AM — AIM installed
+- July 20, 1:28 AM — m57biz.xls last saved by Jean
+
+July 18-19 findings:
+
+- Jean downloaded and installed AIM (download.newaol.com/aim/win95/Install_AIM.exe)
+- Jean visited dashboard.aim.com — logged into AIM
+- Jean browsed MySpace, eBay, leather backpack shopping sites — normal personal browsing
+- QQGames installer also ran locally
+
+July 20-21 findings
+
+- file:///C:/Documents%20and%20Settings/Jean/Desktop/m57biz.xls — Jean directly opened the business spreadsheet from her Desktop in Internet Explorer
+- Jean then visited Microsoft Office update pages immediately after — possibly checking for Excel
+
+Timeline continued
+
+- July 18, 4:26 AM — AIM installed
+- July 18-19 — Jean logs into AIM, browses normally
+- July 20, 1:28 AM — m57biz.xls saved by Jean
+- July 20 — Jean opens m57biz.xls directly in IE
