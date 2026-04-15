@@ -69,3 +69,19 @@ Timeline continued
 - July 18-19 — Jean logs into AIM, browses normally
 - July 20, 1:28 AM — m57biz.xls saved by Jean
 - July 20 — Jean opens m57biz.xls directly in IE
+
+4/15
+
+=== EMAIL EVIDENCE - 2026-04-15 ===
+PST extracted via readpst to ~/cases/M57-Jean/email-export/
+Key email: "RE: Please send me the information now"
+- Sent: Sun Jul 20 2008 01:28:47 UTC
+- From: jean@m57.biz
+- To: alison@m57.biz
+- Attachment: m57biz.xls (base64 encoded, confirmed)
+- Body: "I've attached the information that you have requested"
+- Alison's original request came from tuckgorge@gmail.com spoofing alison@m57.biz
+- Alison requested names, salaries, and SSNs for all employees citing VC investor
+- Follow-up: "RE: Thanks!" sent Jul 20 05:07 UTC confirms Alison received the file
+- By Jul 20-21: Bob and other employees report SSNs posted publicly online
+
