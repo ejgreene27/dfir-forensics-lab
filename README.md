@@ -49,7 +49,7 @@ Each case follows a consistent structure modeled after real-world DFIR deliverab
 
 | # | Case Name | Image Source | Tools Used | Status |
 |---|-----------|--------------|------------|--------|
-| 001 | [M57-Jean — Insider Threat Investigation](cases/001-m57-jean/report.md) | [NPS M57-Jean](https://digitalcorpora.org/corpora/scenarios/m57-jean) | Sleuth Kit, Autopsy 4, ewfmount, SIFT Workstation | Complete |
+| 001 | [M57-Jean — Insider Threat Investigation](cases/M57-Jean/report.md) | [NPS M57-Jean](https://digitalcorpora.org/corpora/scenarios/m57-jean) | Sleuth Kit, Autopsy 4, ewfmount, SIFT Workstation | Complete |
 
 ## About
 
