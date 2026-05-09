@@ -45,9 +45,11 @@ Each case follows a consistent structure modeled after real-world DFIR deliverab
 
 ## Cases
 
-| # | Case Name | Image Source | Tools Used | Status |
-|---|-----------|-------------|------------|--------|
-| — | *Coming soon* | — | — | — |
+Case No. 001
+Name: M57-Jean
+Image Source: [NPS M57-Jean](https://digitalcorpora.org/corpora/scenarios/m57-jean)
+Tools Used: Sleuth Kit, Autopsy 4, ewfmount, SIFT Workstation
+Status: Completed
 
 ## About
 
